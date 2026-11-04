@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/EntityAccessAnalyzer.Sample/EntityAccessAnalyzer.Sample.csproj" />
+  <Project Path="src/EntityAccessAnalyzer.Tests/EntityAccessAnalyzer.Tests.csproj" />
+  <Project Path="src/EntityAccessAnalyzer/EntityAccessAnalyzer.csproj" />
+</Solution>
