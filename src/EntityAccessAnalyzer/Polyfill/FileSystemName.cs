@@ -6,6 +6,7 @@ using System;
 namespace System.IO.Enumeration
 {
     /// <summary>Provides methods for matching file system names.</summary>
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     internal static class FileSystemName
     {
         /// <summary>Verifies whether the given expression matches the given name. Supports the following wildcards: '*' and '?'. The backslash character '\\' escapes.</summary>
