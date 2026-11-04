@@ -11,6 +11,8 @@
         <Version>0.1.0</Version>
 
         <!-- NuGet Packaging -->
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
         <PackageId>AndanteTribe.EntityAccessAnalyzer</PackageId>
         <PackageVersion>$(Version)</PackageVersion>
         <Authors>AndanteTribe</Authors>
@@ -27,7 +29,12 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.0"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.0" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(OutputPath)$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+        <None Include="$(OutputPath)ja/$(AssemblyName).resources.dll" Pack="true" PackagePath="analyzers/dotnet/cs/ja" Visible="false" />
     </ItemGroup>
 
     <ItemGroup>
