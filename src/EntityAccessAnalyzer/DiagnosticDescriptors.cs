@@ -21,7 +21,8 @@ internal static class DiagnosticDescriptors
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true,
-        helpLinkUri: HelpLinkBase + "EAA0001.md");
+        helpLinkUri: HelpLinkBase + "EAA0001.md",
+        customTags: [Category]);
 
     /// <summary>
     /// EAA0002: an entity exposes a public method or operator that is not an allowed exception.
@@ -34,7 +35,8 @@ internal static class DiagnosticDescriptors
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true,
-        helpLinkUri: HelpLinkBase + "EAA0002.md");
+        helpLinkUri: HelpLinkBase + "EAA0002.md",
+        customTags: [Category]);
 
     /// <summary>
     /// EAA0003: an entity exposes a prohibited type, including through a recursively inspected element.
@@ -47,7 +49,8 @@ internal static class DiagnosticDescriptors
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true,
-        helpLinkUri: HelpLinkBase + "EAA0003.md");
+        helpLinkUri: HelpLinkBase + "EAA0003.md",
+        customTags: [Category]);
 
     /// <summary>
     /// EAA0004: an entity exposes an enumeration-only API, including through a type parameter constraint.
@@ -60,5 +63,6 @@ internal static class DiagnosticDescriptors
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true,
-        helpLinkUri: HelpLinkBase + "EAA0004.md");
+        helpLinkUri: HelpLinkBase + "EAA0004.md",
+        customTags: [Category]);
 }
