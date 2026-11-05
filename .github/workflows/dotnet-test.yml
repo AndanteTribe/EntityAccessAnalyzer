@@ -7,11 +7,13 @@ on:
       - synchronize
     paths:
       - 'src/**'
+      - '.github/workflows/dotnet-test.yml'
   push:
     branches:
       - main
     paths:
       - 'src/**'
+      - '.github/workflows/dotnet-test.yml'
   workflow_dispatch: {}
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -38,6 +40,7 @@ jobs:
         dotnet test ./src/EntityAccessAnalyzer.Tests
         --configuration Release --no-build --framework net10.0
         --collect "XPlat Code Coverage"
+        --settings src/EntityAccessAnalyzer.Tests/coverage.runsettings
         --results-directory artifacts/test-results
     - name: Generate coverage report
       if: ${{ !cancelled() && steps.test.outcome != 'skipped' && steps.test.outcome != '' }}
