@@ -1,0 +1,19 @@
+name: Publish Core to Nuget
+on:
+  workflow_dispatch: {}
+permissions: {}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # ghasec-ignore: unpinned-action
+      - uses: AndanteTribe/Actions/actions/dispatch-nuget-publish@main # zizmor: ignore[unpinned-uses] repository-local action reference is intentionally tracked on @main
+        with:
+          token: ${{ secrets.NUGET_PUBLISH_PAT }}
+          project: src/EntityAccessAnalyzer/EntityAccessAnalyzer.csproj
+          dotnet-version: '10.0.x'
